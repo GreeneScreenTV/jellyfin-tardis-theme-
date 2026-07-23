@@ -1,0 +1,677 @@
+/*
+========================================================
+
+        JELLYFIN TARDIS THEME
+
+        RELEASE 0.1
+
+        FOUNDATION MODULE
+
+========================================================
+*/
+
+
+
+/*
+========================================================
+GLOBAL BACKGROUND
+========================================================
+*/
+
+
+html {
+
+
+    background:
+
+        var(--tardis-void);
+
+
+}
+
+
+
+
+body {
+
+
+    color:
+
+        var(--text-primary);
+
+
+    background:
+
+
+        radial-gradient(
+
+            circle at 50% -10%,
+
+            rgba(86,215,255,.15),
+
+            transparent 45%
+
+        ),
+
+
+        radial-gradient(
+
+            circle at 20% 90%,
+
+            rgba(31,111,168,.18),
+
+            transparent 40%
+
+        ),
+
+
+        linear-gradient(
+
+            180deg,
+
+            var(--tardis-deep-blue),
+
+            var(--tardis-void)
+
+        );
+
+
+
+}
+
+
+
+
+
+.backgroundContainer {
+
+
+    background:
+
+
+        transparent
+
+        !important;
+
+
+
+}
+
+
+
+
+/*
+========================================================
+ATMOSPHERIC LIGHTING
+========================================================
+*/
+
+
+body::before {
+
+
+    content:"";
+
+
+    position:
+
+        fixed;
+
+
+    inset:
+
+        0;
+
+
+    pointer-events:
+
+        none;
+
+
+    background:
+
+
+        radial-gradient(
+
+            ellipse at center,
+
+            transparent 40%,
+
+            rgba(0,0,0,.65)
+
+        );
+
+
+
+    z-index:
+
+        999;
+
+
+
+}
+
+
+
+
+/*
+========================================================
+HEADER
+========================================================
+*/
+
+
+.skinHeader {
+
+
+    background:
+
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(10,27,46,.95),
+
+            rgba(3,9,18,.80)
+
+        )
+
+        !important;
+
+
+
+    backdrop-filter:
+
+        blur(14px);
+
+
+
+    border-bottom:
+
+        1px solid
+        var(--border-cyan);
+
+
+
+    box-shadow:
+
+        var(--deep-shadow);
+
+
+
+}
+
+
+
+
+/*
+========================================================
+SIDE DRAWER
+========================================================
+*/
+
+
+.mainDrawer {
+
+
+    background:
+
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(10,27,46,.96),
+
+            rgba(3,9,18,.96)
+
+        )
+
+        !important;
+
+
+
+    border-right:
+
+        1px solid
+        var(--border-cyan);
+
+
+
+}
+
+
+
+
+.navMenuOption {
+
+
+    color:
+
+        var(--text-secondary)
+
+        !important;
+
+
+
+    transition:
+
+        var(--transition-normal);
+
+
+
+}
+
+
+
+
+.navMenuOption:hover {
+
+
+    color:
+
+        white
+
+        !important;
+
+
+
+    background:
+
+
+        rgba(86,215,255,.12)
+
+        !important;
+
+
+
+    box-shadow:
+
+
+        inset 3px 0 0
+        var(--tardis-cyan);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+TYPOGRAPHY
+========================================================
+*/
+
+
+body {
+
+
+    font-family:
+
+
+        "Segoe UI",
+
+        "Helvetica Neue",
+
+        Arial,
+
+        sans-serif;
+
+
+
+}
+
+
+
+
+h1,
+h2,
+h3,
+h4 {
+
+
+    color:
+
+        var(--text-primary)
+
+        !important;
+
+
+
+    letter-spacing:
+
+        .04em;
+
+
+
+    text-shadow:
+
+
+        0 0 15px
+
+        rgba(86,215,255,.2);
+
+
+
+}
+
+
+
+
+
+.secondary {
+
+
+    color:
+
+        var(--text-secondary)
+
+        !important;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+BUTTON FOUNDATION
+========================================================
+*/
+
+
+.emby-button {
+
+
+    background:
+
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(31,111,168,.35),
+
+            rgba(3,9,18,.85)
+
+        )
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+        var(--border-cyan);
+
+
+
+    color:
+
+
+        white
+
+        !important;
+
+
+
+    border-radius:
+
+
+        var(--radius-small);
+
+
+
+    transition:
+
+
+        var(--transition-normal);
+
+
+
+}
+
+
+
+
+.emby-button:hover {
+
+
+    border-color:
+
+
+        var(--tardis-cyan);
+
+
+
+    box-shadow:
+
+
+        var(--cyan-glow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+INPUTS
+========================================================
+*/
+
+
+input,
+textarea,
+select,
+.emby-input {
+
+
+    background:
+
+
+        rgba(3,9,18,.8)
+
+        !important;
+
+
+
+    color:
+
+
+        var(--text-primary)
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+        var(--border-cyan)
+
+        !important;
+
+
+
+}
+
+
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+
+    outline:
+
+        none;
+
+
+
+    border-color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+    box-shadow:
+
+
+        var(--cyan-glow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+SCROLLBARS
+========================================================
+*/
+
+
+::-webkit-scrollbar {
+
+
+    width:
+
+        10px;
+
+
+
+}
+
+
+
+
+::-webkit-scrollbar-track {
+
+
+    background:
+
+        var(--tardis-void);
+
+
+
+}
+
+
+
+
+
+::-webkit-scrollbar-thumb {
+
+
+    background:
+
+
+        linear-gradient(
+
+            180deg,
+
+            var(--tardis-blue-bright),
+
+            var(--tardis-cyan)
+
+        );
+
+
+
+    border-radius:
+
+
+        20px;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+FOCUS STATES
+========================================================
+*/
+
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+
+
+    outline:
+
+
+        2px solid
+        var(--tardis-cyan);
+
+
+
+    outline-offset:
+
+
+        3px;
+
+
+
+}
+
+
+
+
+/*
+========================================================
+FOUNDATION ANIMATIONS
+========================================================
+*/
+
+
+@keyframes tardisAmbient {
+
+
+    0% {
+
+        opacity:.6;
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        opacity:.6;
+
+    }
+
+}
