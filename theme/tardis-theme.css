@@ -1,9 +1,9 @@
 /* TARDIS Theme Master File */
-@import url("./variables.css");
-@import url("./modules/01-foundation.css");
-@import url("./modules/02-interface.css");
-@import url("./modules/03-player.css");
-@import url("./modules/04-login.css");
-@import url("./modules/05-details.css");
-@import url("./modules/06-polish.css");
+@import url("https://raw.githubusercontent.com/GreenScreenTV/jellyfin-tardis-theme/main/variables.css");
+@import url("https://raw.githubusercontent.com/GreenScreenTV/jellyfin-tardis-theme/main/modules/01-foundation.css");
+@import url("https://raw.githubusercontent.com/GreenScreenTV/jellyfin-tardis-theme/main/modules/02-interface.css");
+@import url("https://raw.githubusercontent.com/GreenScreenTV/jellyfin-tardis-theme/main/modules/03-player.css");
+@import url("https://raw.githubusercontent.com/GreenScreenTV/jellyfin-tardis-theme/main/modules/04-login.css");
+@import url("https://raw.githubusercontent.com/GreenScreenTV/jellyfin-tardis-theme/main/modules/05-details.css");
+@import url("https://raw.githubusercontent.com/GreenScreenTV/jellyfin-tardis-theme/main/modules/06-polish.css");
 
