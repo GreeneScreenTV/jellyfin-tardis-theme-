@@ -1,0 +1,917 @@
+/*
+========================================================
+
+        JELLYFIN TARDIS THEME
+
+        RELEASE 0.2
+
+        INTERFACE SYSTEM
+
+        Media Archive Components
+
+========================================================
+*/
+
+
+/*
+========================================================
+MEDIA CARDS
+========================================================
+*/
+
+
+.cardBox {
+
+
+    background:
+
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(18,59,103,.35),
+
+            rgba(3,9,18,.90)
+
+        )
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+        rgba(86,215,255,.18);
+
+
+
+    border-radius:
+
+
+        var(--radius-medium);
+
+
+
+    overflow:
+
+
+        hidden;
+
+
+
+    transition:
+
+
+        transform .25s ease,
+
+        box-shadow .25s ease,
+
+        border-color .25s ease;
+
+
+
+}
+
+
+
+
+
+.cardBox:hover {
+
+
+    transform:
+
+
+        translateY(-6px);
+
+
+
+    border-color:
+
+
+        rgba(86,215,255,.65);
+
+
+
+    box-shadow:
+
+
+        0 0 25px
+
+        rgba(86,215,255,.25),
+
+
+
+        0 20px 40px
+
+        rgba(0,0,0,.55);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+POSTER IMAGES
+========================================================
+*/
+
+
+.cardImageContainer {
+
+
+    background:
+
+
+        var(--tardis-void);
+
+
+
+}
+
+
+
+.cardImageContainer img {
+
+
+    transition:
+
+
+        transform .45s ease,
+
+        filter .45s ease;
+
+
+
+}
+
+
+
+
+.cardBox:hover img {
+
+
+    transform:
+
+
+        scale(1.04);
+
+
+
+    filter:
+
+
+        brightness(1.08)
+
+        saturate(1.15);
+
+
+
+}
+
+
+
+
+/*
+========================================================
+HOLOGRAM SCAN EFFECT
+========================================================
+*/
+
+
+.cardBox {
+
+
+    position:
+
+
+        relative;
+
+
+
+}
+
+
+
+
+.cardBox::after {
+
+
+    content:"";
+
+
+    position:
+
+
+        absolute;
+
+
+
+    top:
+
+
+        0;
+
+
+
+    left:
+
+
+        -120%;
+
+
+
+    width:
+
+
+        70%;
+
+
+
+    height:
+
+
+        100%;
+
+
+
+    background:
+
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(86,215,255,.18),
+
+            transparent
+
+        );
+
+
+
+    transform:
+
+
+        skewX(-20deg);
+
+
+
+    transition:
+
+
+        .8s ease;
+
+
+
+    pointer-events:
+
+
+        none;
+
+
+
+}
+
+
+
+
+
+.cardBox:hover::after {
+
+
+    left:
+
+
+        150%;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+MEDIA TITLES
+========================================================
+*/
+
+
+.cardText {
+
+
+    color:
+
+
+        var(--text-primary)
+
+        !important;
+
+
+
+    text-shadow:
+
+
+        0 0 10px
+
+        rgba(86,215,255,.18);
+
+
+
+}
+
+
+
+
+.cardText:hover {
+
+
+    color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+CONTINUE WATCHING
+========================================================
+*/
+
+
+.itemProgressBar {
+
+
+    background:
+
+
+        rgba(0,0,0,.65)
+
+        !important;
+
+
+
+    height:
+
+
+        5px;
+
+
+
+}
+
+
+
+
+.itemProgressBarForeground {
+
+
+    background:
+
+
+        linear-gradient(
+
+            90deg,
+
+            var(--tardis-blue-bright),
+
+            var(--tardis-cyan)
+
+        )
+
+        !important;
+
+
+
+    box-shadow:
+
+
+        0 0 12px
+
+        rgba(86,215,255,.65);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+SECTION HEADERS
+========================================================
+*/
+
+
+.sectionTitle {
+
+
+    color:
+
+
+        var(--text-primary)
+
+        !important;
+
+
+
+    letter-spacing:
+
+
+        .08em;
+
+
+
+    text-transform:
+
+
+        uppercase;
+
+
+
+    text-shadow:
+
+
+        0 0 15px
+
+        rgba(86,215,255,.25);
+
+
+
+}
+
+
+
+
+
+/*
+Console underline
+
+*/
+
+.sectionTitle::after {
+
+
+    content:"";
+
+
+    display:
+
+
+        block;
+
+
+
+    width:
+
+
+        140px;
+
+
+
+    height:
+
+
+        2px;
+
+
+
+    margin-top:
+
+
+        8px;
+
+
+
+    background:
+
+
+        linear-gradient(
+
+            90deg,
+
+            var(--tardis-cyan),
+
+            transparent
+
+        );
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+DETAIL PAGE SURFACES
+========================================================
+*/
+
+
+.itemDetailPage {
+
+
+    background:
+
+
+        transparent;
+
+
+}
+
+
+
+
+.itemDetailPage .cardBox {
+
+
+    background:
+
+
+        rgba(10,27,46,.65);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+OVERVIEW TEXT
+========================================================
+*/
+
+
+.itemOverview {
+
+
+    color:
+
+
+        var(--text-secondary)
+
+        !important;
+
+
+
+    line-height:
+
+
+        1.65;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+BADGES
+========================================================
+*/
+
+
+.itemBadge {
+
+
+    background:
+
+
+        rgba(18,59,103,.85)
+
+        !important;
+
+
+
+    color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.35);
+
+
+
+    border-radius:
+
+
+        20px;
+
+
+
+    box-shadow:
+
+
+        0 0 12px
+
+        rgba(86,215,255,.20);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+RATINGS
+========================================================
+*/
+
+
+.starIcon {
+
+
+    color:
+
+
+        var(--gallifrey-brass)
+
+        !important;
+
+
+
+    filter:
+
+
+        drop-shadow(
+
+            0 0 6px
+
+            rgba(178,138,74,.45)
+
+        );
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+CAST / PEOPLE CARDS
+========================================================
+*/
+
+
+.personCard {
+
+
+    background:
+
+
+        rgba(10,27,46,.65)
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.15);
+
+
+
+    border-radius:
+
+
+        var(--radius-medium);
+
+
+
+    transition:
+
+
+        var(--transition-normal);
+
+
+
+}
+
+
+
+
+.personCard:hover {
+
+
+    border-color:
+
+
+        var(--gallifrey-brass);
+
+
+
+    box-shadow:
+
+
+        var(--brass-glow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+EPISODE LISTS
+========================================================
+*/
+
+
+.listItem {
+
+
+    background:
+
+
+        rgba(10,27,46,.35);
+
+
+
+    border-bottom:
+
+
+        1px solid
+
+        rgba(86,215,255,.08);
+
+
+
+    transition:
+
+
+        var(--transition-normal);
+
+
+
+}
+
+
+
+
+
+.listItem:hover {
+
+
+    background:
+
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(86,215,255,.12),
+
+            transparent
+
+        );
+
+
+
+    border-left:
+
+
+        2px solid
+
+        var(--tardis-cyan);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+PLAYED / FAVORITE INDICATORS
+========================================================
+*/
+
+
+.playstatebutton-played {
+
+
+    color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+    text-shadow:
+
+
+        var(--cyan-glow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+ITEM BUTTONS
+========================================================
+*/
+
+
+.itemActionButton {
+
+
+    transition:
+
+
+        var(--transition-fast);
+
+
+
+}
+
+
+
+
+.itemActionButton:hover {
+
+
+    color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+    filter:
+
+
+        drop-shadow(
+
+            0 0 8px
+
+            rgba(86,215,255,.5)
+
+        );
+
+
+
+}

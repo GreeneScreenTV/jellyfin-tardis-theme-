@@ -1,0 +1,745 @@
+/*
+========================================================
+
+        JELLYFIN TARDIS THEME
+
+        RELEASE 0.6
+
+        POLISH & IMMERSION LAYER
+
+        Time Lord Interface Systems
+
+========================================================
+*/
+
+
+
+/*
+========================================================
+GLOBAL HOLOGRAM EFFECT
+========================================================
+*/
+
+
+body {
+
+
+    position:
+
+
+        relative;
+
+
+
+}
+
+
+
+
+
+body::after {
+
+
+    content:"";
+
+
+    position:
+
+
+        fixed;
+
+
+
+    inset:
+
+
+        0;
+
+
+
+    pointer-events:
+
+
+        none;
+
+
+
+    background:
+
+
+        repeating-linear-gradient(
+
+            0deg,
+
+            transparent,
+
+            transparent 3px,
+
+            rgba(86,215,255,.015) 4px
+
+        );
+
+
+
+    opacity:
+
+
+        .35;
+
+
+
+    z-index:
+
+
+        998;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+PAGE TRANSITION FEEL
+========================================================
+*/
+
+
+.mainAnimatedPage {
+
+
+    animation:
+
+
+        tardisMaterialize
+
+        .35s
+
+        ease;
+
+
+
+}
+
+
+
+@keyframes tardisMaterialize {
+
+
+    from {
+
+
+        opacity:
+
+
+            0;
+
+
+
+        filter:
+
+
+            blur(4px);
+
+
+
+        transform:
+
+
+            scale(.995);
+
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:
+
+
+            1;
+
+
+
+        filter:
+
+
+            blur(0);
+
+
+
+        transform:
+
+
+            scale(1);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+/*
+========================================================
+LOADING INDICATORS
+========================================================
+*/
+
+
+.mdl-spinner {
+
+
+    filter:
+
+
+        drop-shadow(
+
+            0 0 12px
+
+            rgba(86,215,255,.8)
+
+        );
+
+
+
+}
+
+
+
+
+
+.mdl-spinner-layer {
+
+
+    border-color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+DIALOG WINDOWS
+========================================================
+*/
+
+
+.dialog {
+
+
+    background:
+
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(10,27,46,.95),
+
+            rgba(3,9,18,.98)
+
+        )
+
+        !important;
+
+
+
+    backdrop-filter:
+
+
+        blur(18px);
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.35);
+
+
+
+    border-radius:
+
+
+        var(--radius-medium);
+
+
+
+    box-shadow:
+
+
+        0 30px 90px
+
+        rgba(0,0,0,.8);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+POPUP MENUS
+========================================================
+*/
+
+
+.floatingPanel {
+
+
+    background:
+
+
+        rgba(10,27,46,.92)
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.25);
+
+
+
+    box-shadow:
+
+
+        var(--deep-shadow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+TARDIS STATUS LIGHTS
+========================================================
+*/
+
+
+.emby-button::before {
+
+
+    content:"";
+
+
+    display:
+
+
+        inline-block;
+
+
+
+    width:
+
+
+        5px;
+
+
+
+    height:
+
+
+        5px;
+
+
+
+    margin-right:
+
+
+        8px;
+
+
+
+    border-radius:
+
+
+        50%;
+
+
+
+    background:
+
+
+        var(--tardis-cyan);
+
+
+
+    box-shadow:
+
+
+        0 0 8px
+
+        var(--tardis-cyan);
+
+
+
+    opacity:
+
+
+        .65;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+ARCHIVE IDENTIFIERS
+========================================================
+*/
+
+
+.sectionTitle {
+
+
+    position:
+
+
+        relative;
+
+
+
+}
+
+
+
+
+.sectionTitle::before {
+
+
+    content:
+
+
+        "▣";
+
+
+
+    color:
+
+
+        var(--tardis-cyan);
+
+
+
+    margin-right:
+
+
+        10px;
+
+
+
+    font-size:
+
+
+        .8em;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+HOLOGRAPHIC FOCUS STATES
+========================================================
+*/
+
+
+a:hover,
+button:hover {
+
+
+    transition:
+
+
+        var(--transition-fast);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+TABLES / TECH DATA
+========================================================
+*/
+
+
+table {
+
+
+    background:
+
+
+        rgba(10,27,46,.35);
+
+
+
+    border-collapse:
+
+
+        collapse;
+
+
+
+}
+
+
+
+
+
+td,
+th {
+
+
+    border-bottom:
+
+
+        1px solid
+
+        rgba(86,215,255,.12);
+
+
+
+}
+
+
+
+
+
+th {
+
+
+    color:
+
+
+        var(--tardis-cyan);
+
+
+
+    letter-spacing:
+
+
+        .08em;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+SEARCH EXPERIENCE
+========================================================
+*/
+
+
+.searchFields {
+
+
+    background:
+
+
+        rgba(3,9,18,.75);
+
+
+
+    border-radius:
+
+
+        var(--radius-medium);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+ARCHIVE SCANNER EFFECT
+========================================================
+*/
+
+
+@keyframes tardisScanner {
+
+
+    0% {
+
+
+        transform:
+
+
+            translateX(-100%);
+
+
+
+    }
+
+
+    100% {
+
+
+        transform:
+
+
+            translateX(100%);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+/*
+========================================================
+EMPTY STATES
+========================================================
+*/
+
+
+.emptyMessage {
+
+
+    color:
+
+
+        var(--text-secondary);
+
+
+
+    text-shadow:
+
+
+        0 0 12px
+
+        rgba(86,215,255,.25);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+FINAL AMBIENT GLOW
+========================================================
+*/
+
+
+.cardBox,
+.dialog,
+.personCard,
+.listItem {
+
+
+    transition:
+
+
+        transform .25s ease,
+
+        border-color .25s ease,
+
+        box-shadow .25s ease;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+REDUCED MOTION SUPPORT
+
+========================================================
+*/
+
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    *,
+    *::before,
+    *::after {
+
+
+        animation-duration:
+
+
+            .01ms !important;
+
+
+
+        transition-duration:
+
+
+            .01ms !important;
+
+
+
+    }
+
+
+}

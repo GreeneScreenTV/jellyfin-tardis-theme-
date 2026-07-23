@@ -1,0 +1,849 @@
+/*
+========================================================
+
+        JELLYFIN TARDIS THEME
+
+        RELEASE 0.3
+
+        PLAYER CONSOLE SYSTEM
+
+        Temporal Viewing Interface
+
+========================================================
+*/
+
+
+
+/*
+========================================================
+PLAYER ENVIRONMENT
+========================================================
+*/
+
+
+.videoPlayerContainer {
+
+
+    background:
+
+
+        radial-gradient(
+
+            circle at center,
+
+            rgba(18,59,103,.20),
+
+            var(--tardis-void) 70%
+
+        )
+
+        !important;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+PLAYER OVERLAY
+========================================================
+*/
+
+
+.videoOsd {
+
+
+    background:
+
+
+        linear-gradient(
+
+            180deg,
+
+            transparent,
+
+            rgba(3,9,18,.85)
+
+        )
+
+        !important;
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+BOTTOM CONTROL CONSOLE
+========================================================
+*/
+
+
+.videoOsdBottom {
+
+
+    background:
+
+
+        linear-gradient(
+
+            180deg,
+
+            transparent,
+
+            rgba(3,9,18,.95)
+
+        )
+
+        !important;
+
+
+
+    backdrop-filter:
+
+
+        blur(14px);
+
+
+
+    border-top:
+
+
+        1px solid
+
+        rgba(86,215,255,.15);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+PLAYER BUTTONS
+========================================================
+*/
+
+
+.videoOsdButton,
+.mdl-button {
+
+
+    color:
+
+
+        var(--text-primary)
+
+        !important;
+
+
+
+    transition:
+
+
+        var(--transition-fast);
+
+
+
+}
+
+
+
+
+
+.videoOsdButton:hover,
+.mdl-button:hover {
+
+
+    color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+    text-shadow:
+
+
+        var(--cyan-glow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+MAIN PLAY BUTTON
+========================================================
+*/
+
+
+.playbackButton {
+
+
+    background:
+
+
+        rgba(18,59,103,.75);
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.35);
+
+
+
+    border-radius:
+
+
+        50%;
+
+
+
+    box-shadow:
+
+
+        0 0 20px
+
+        rgba(86,215,255,.20);
+
+
+
+    animation:
+
+
+        tardisPlayerPulse
+
+        8s
+
+        infinite;
+
+
+
+}
+
+
+
+
+.playbackButton:hover {
+
+
+    box-shadow:
+
+
+        var(--cyan-glow);
+
+
+
+}
+
+
+
+
+
+@keyframes tardisPlayerPulse {
+
+
+    0% {
+
+
+        box-shadow:
+
+
+            0 0 10px
+
+            rgba(86,215,255,.2);
+
+
+
+    }
+
+
+    50% {
+
+
+        box-shadow:
+
+
+            0 0 35px
+
+            rgba(86,215,255,.45);
+
+
+
+    }
+
+
+    100% {
+
+
+        box-shadow:
+
+
+            0 0 10px
+
+            rgba(86,215,255,.2);
+
+
+
+    }
+
+}
+
+
+
+
+
+/*
+========================================================
+TIMELINE SYSTEM
+========================================================
+*/
+
+
+.mdl-slider {
+
+
+    display:
+
+
+        flex;
+
+
+
+    align-items:
+
+
+        center;
+
+
+
+}
+
+
+
+
+/*
+Timeline track
+*/
+
+
+.mdl-slider::-webkit-slider-runnable-track {
+
+
+    height:
+
+
+        6px;
+
+
+
+    background:
+
+
+        rgba(255,255,255,.15);
+
+
+
+    border-radius:
+
+
+        20px;
+
+
+
+}
+
+
+
+
+
+/*
+Timeline energy playhead
+
+Chrome / Edge
+*/
+
+
+.mdl-slider::-webkit-slider-thumb {
+
+
+    background:
+
+
+        var(--tardis-cyan);
+
+
+
+    border:
+
+
+        none;
+
+
+
+    box-shadow:
+
+
+        0 0 12px
+
+        rgba(86,215,255,.9);
+
+
+
+    margin-top:
+
+
+        -1px;
+
+
+
+}
+
+
+
+
+
+/*
+Firefox
+*/
+
+
+.mdl-slider::-moz-range-thumb {
+
+
+    background:
+
+
+        var(--tardis-cyan);
+
+
+
+    border:
+
+
+        none;
+
+
+
+    box-shadow:
+
+
+        0 0 12px
+
+        rgba(86,215,255,.9);
+
+
+
+    transform:
+
+
+        translateY(-1px);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+BUFFERING
+========================================================
+*/
+
+
+.mdl-progress {
+
+
+    background:
+
+
+        rgba(86,215,255,.12);
+
+
+
+}
+
+
+
+
+.mdl-progress > .bar {
+
+
+    background:
+
+
+        linear-gradient(
+
+            90deg,
+
+            var(--tardis-blue-bright),
+
+            var(--tardis-cyan)
+
+        )
+
+        !important;
+
+
+
+    box-shadow:
+
+
+        0 0 15px
+
+        rgba(86,215,255,.6);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+AUDIO / SUBTITLE MENUS
+========================================================
+*/
+
+
+.videoOsdMenu {
+
+
+    background:
+
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(10,27,46,.92),
+
+            rgba(3,9,18,.96)
+
+        )
+
+        !important;
+
+
+
+    backdrop-filter:
+
+
+        blur(15px);
+
+
+
+    border:
+
+
+        1px solid
+
+        var(--border-cyan);
+
+
+
+    box-shadow:
+
+
+        var(--deep-shadow);
+
+
+
+}
+
+
+
+
+
+.selectContainer {
+
+
+    background:
+
+
+        rgba(3,9,18,.8)
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+
+        var(--border-cyan);
+
+
+
+}
+
+
+
+
+
+.selectContainer:hover {
+
+
+    border-color:
+
+
+        var(--tardis-cyan);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+NOW PLAYING INFORMATION
+========================================================
+*/
+
+
+.nowPlayingBar {
+
+
+    background:
+
+
+        rgba(3,9,18,.75);
+
+
+
+    border-top:
+
+
+        1px solid
+
+        rgba(86,215,255,.15);
+
+
+
+}
+
+
+
+
+.nowPlayingBarTitle {
+
+
+    color:
+
+
+        var(--text-primary)
+
+        !important;
+
+
+
+    text-shadow:
+
+
+        0 0 12px
+
+        rgba(86,215,255,.35);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+FULLSCREEN CINEMA MODE
+========================================================
+*/
+
+
+.videoPlayerContainer:fullscreen {
+
+
+    background:
+
+
+        var(--tardis-void);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+PLAYER CORNER HUD
+========================================================
+*/
+
+
+.videoOsd::before {
+
+
+    content:"";
+
+
+    position:
+
+
+        absolute;
+
+
+
+    top:
+
+
+        20px;
+
+
+
+    left:
+
+
+        20px;
+
+
+
+    width:
+
+
+        70px;
+
+
+
+    height:
+
+
+        70px;
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.18);
+
+
+
+    border-radius:
+
+
+        50%;
+
+
+
+    opacity:
+
+
+        .35;
+
+
+
+}
+
+
+
+
+
+.videoOsd::after {
+
+
+    content:"";
+
+
+    position:
+
+
+        absolute;
+
+
+
+    bottom:
+
+
+        20px;
+
+
+
+    right:
+
+
+        20px;
+
+
+
+    width:
+
+
+        140px;
+
+
+
+    height:
+
+
+        2px;
+
+
+
+    background:
+
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            var(--tardis-cyan)
+
+        );
+
+
+
+    opacity:
+
+
+        .45;
+
+
+
+}

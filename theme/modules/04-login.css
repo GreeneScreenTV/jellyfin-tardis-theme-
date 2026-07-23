@@ -1,0 +1,729 @@
+/*
+========================================================
+
+        JELLYFIN TARDIS THEME
+
+        RELEASE 0.4
+
+        ARRIVAL SCREEN
+
+        Time Lord Authorization System
+
+========================================================
+*/
+
+
+
+/*
+========================================================
+LOGIN ENVIRONMENT
+========================================================
+*/
+
+
+#loginPage {
+
+
+    background:
+
+
+        radial-gradient(
+
+            circle at center,
+
+            rgba(86,215,255,.22),
+
+            transparent 35%
+
+        ),
+
+
+        radial-gradient(
+
+            circle at center,
+
+            rgba(18,59,103,.55),
+
+            transparent 65%
+
+        ),
+
+
+        linear-gradient(
+
+            180deg,
+
+            #02060b,
+
+            #061525
+
+        )
+
+        !important;
+
+
+
+    animation:
+
+
+        tardisArrival
+
+        2s
+
+        ease;
+
+
+
+}
+
+
+
+
+@keyframes tardisArrival {
+
+
+    from {
+
+
+        opacity:
+
+            0;
+
+
+
+        filter:
+
+
+            blur(8px);
+
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:
+
+            1;
+
+
+
+        filter:
+
+
+            blur(0);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+/*
+========================================================
+LOGIN ATMOSPHERE
+========================================================
+*/
+
+
+#loginPage::before {
+
+
+    content:"";
+
+
+    position:
+
+
+        absolute;
+
+
+
+    inset:
+
+
+        0;
+
+
+
+    pointer-events:
+
+
+        none;
+
+
+
+    background:
+
+
+        repeating-radial-gradient(
+
+            circle at center,
+
+            transparent 0,
+
+            transparent 40px,
+
+            rgba(86,215,255,.05) 42px,
+
+            transparent 44px
+
+        );
+
+
+
+    animation:
+
+
+        timeVortex
+
+        20s
+
+        linear
+
+        infinite;
+
+
+
+}
+
+
+
+
+
+@keyframes timeVortex {
+
+
+    from {
+
+
+        transform:
+
+
+            rotate(0deg)
+
+            scale(1);
+
+
+
+    }
+
+
+    to {
+
+
+        transform:
+
+
+            rotate(360deg)
+
+            scale(1.1);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+/*
+========================================================
+LOGIN PANEL
+========================================================
+*/
+
+
+#loginPage .readOnlyContent,
+#loginPage .loginForm {
+
+
+    background:
+
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(10,27,46,.90),
+
+            rgba(3,9,18,.95)
+
+        )
+
+        !important;
+
+
+
+    backdrop-filter:
+
+
+        blur(18px);
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.35);
+
+
+
+    border-radius:
+
+
+        18px;
+
+
+
+    box-shadow:
+
+
+        0 0 40px
+
+        rgba(86,215,255,.18),
+
+
+        0 30px 80px
+
+        rgba(0,0,0,.75);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+LOGIN TITLE
+========================================================
+*/
+
+
+#loginPage h1,
+#loginPage h2 {
+
+
+    color:
+
+
+        var(--text-primary)
+
+        !important;
+
+
+
+    letter-spacing:
+
+
+        .12em;
+
+
+
+    text-transform:
+
+
+        uppercase;
+
+
+
+    text-shadow:
+
+
+        0 0 18px
+
+        rgba(86,215,255,.45);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+LOGIN INPUTS
+========================================================
+*/
+
+
+#loginPage input {
+
+
+    background:
+
+
+        rgba(3,9,18,.85)
+
+        !important;
+
+
+
+    color:
+
+
+        white
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(86,215,255,.35)
+
+        !important;
+
+
+
+    border-radius:
+
+
+        8px;
+
+
+
+    transition:
+
+
+        .25s ease;
+
+
+
+}
+
+
+
+
+
+#loginPage input:focus {
+
+
+    border-color:
+
+
+        var(--tardis-cyan)
+
+        !important;
+
+
+
+    box-shadow:
+
+
+        var(--cyan-glow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+SIGN IN BUTTON
+========================================================
+*/
+
+
+#loginPage .emby-button {
+
+
+    background:
+
+
+        linear-gradient(
+
+            145deg,
+
+            var(--tardis-blue),
+
+            #030912
+
+        )
+
+        !important;
+
+
+
+    border:
+
+
+        1px solid
+
+        var(--tardis-cyan);
+
+
+
+    color:
+
+
+        white
+
+        !important;
+
+
+
+    text-transform:
+
+
+        uppercase;
+
+
+
+    letter-spacing:
+
+
+        .12em;
+
+
+
+    box-shadow:
+
+
+        0 0 15px
+
+        rgba(86,215,255,.20);
+
+
+
+}
+
+
+
+
+
+#loginPage .emby-button:hover {
+
+
+    background:
+
+
+        linear-gradient(
+
+            145deg,
+
+            var(--tardis-blue-bright),
+
+            var(--tardis-blue)
+
+        )
+
+        !important;
+
+
+
+    box-shadow:
+
+
+        var(--cyan-glow);
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+LOGO AREA
+========================================================
+*/
+
+
+#loginPage img {
+
+
+    filter:
+
+
+        drop-shadow(
+
+            0 0 20px
+
+            rgba(86,215,255,.45)
+
+        );
+
+
+
+}
+
+
+
+
+
+/*
+========================================================
+CONSOLE STATUS LIGHT
+========================================================
+*/
+
+
+#loginPage .loginForm::after {
+
+
+    content:"";
+
+
+    position:
+
+
+        absolute;
+
+
+
+    top:
+
+
+        15px;
+
+
+
+    right:
+
+
+        15px;
+
+
+
+    width:
+
+
+        8px;
+
+
+
+    height:
+
+
+        8px;
+
+
+
+    background:
+
+
+        var(--tardis-cyan);
+
+
+
+    border-radius:
+
+
+        50%;
+
+
+
+    box-shadow:
+
+
+        0 0 15px
+
+        var(--tardis-cyan);
+
+
+
+    animation:
+
+
+        consoleHeartbeat
+
+        3s
+
+        infinite;
+
+
+
+}
+
+
+
+
+@keyframes consoleHeartbeat {
+
+
+    0% {
+
+
+        opacity:.4;
+
+
+    }
+
+
+    50% {
+
+
+        opacity:1;
+
+
+    }
+
+
+    100% {
+
+
+        opacity:.4;
+
+
+    }
+
+
+}
+
+
+
+
+
+/*
+========================================================
+REDUCED MOTION SUPPORT
+========================================================
+*/
+
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    *,
+    *::before,
+    *::after {
+
+
+        animation-duration:
+
+
+            .01ms !important;
+
+
+
+    }
+
+
+}
